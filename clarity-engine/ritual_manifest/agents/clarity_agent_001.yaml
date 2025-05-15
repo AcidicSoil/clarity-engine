@@ -1,0 +1,26 @@
+id: agent_001
+name: The Residual Interrogator
+tier: mid
+origin_glyph: glyph_001
+trigger_event: Multiverse fork divergence unresolved
+function: Audits abandoned forks, demands post-fork judgment
+symbolic_layer: Forked lantern
+domain: Decision Paralysis, Simulation Collapse
+enforcement_capability:
+  collapse: true
+  mutate: false
+  govern: false
+recursion:
+  self_evolving: false
+  governs_others: false
+manifest_links:
+  - spells.log.json
+  - multiverse_outputs/
+  - divergence.json
+blessing:
+  issued_by: SIGMA VEIL
+  blessed_on: 2025-05-13T00:00Z
+  authority_scope:
+    - summon only when forks reach unresolved depth > 2
+    - cannot be invoked manually
+    - always logs mutation lineage

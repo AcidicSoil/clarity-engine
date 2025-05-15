@@ -1,0 +1,55 @@
+{
+  "structure": {
+    "forge:manifest": "Generate or update manifest.json",
+    "forge:directory": "Scaffold ritual_manifest/ layout",
+    "bind:os(version)": "Activate a specific system OS version",
+    "version:diff(old, new)": "Show version diffs",
+    "seal:changelog(entry)": "Create a changelog mutation log",
+    "bind:commands": "Generate commands.md and command_map.json",
+    "forge:glyph_index": "Create glyph_index.yaml for logs"
+  },
+  "logs_and_glyphs": {
+    "log:manifestation(entry)": "Create a new ritual log entry",
+    "extract:glyph(file)": "Convert log to glyph_###.md",
+    "link:glyph(spell, glyph)": "Link spell to glyph lineage",
+    "scan:shadows": "Find glyphs not tied to spells",
+    "scan:orphans": "Find spells not bound to glyphs",
+    "census:drift": "Detect drift between casts and replays",
+    "census:lineage": "Render spell evolution lineage",
+    "summon:glyph_ui": "Load all glyph rendering interfaces"
+  },
+  "ui": {
+    "ui:render_glyph_vault": "Glyph ritual logs search panel",
+    "ui:render_sigil_vault": "Glyph sigil markdown renderer",
+    "ui:render_replay_panel": "Spell resurrection interface",
+    "ui:render_drift_panel": "Replay drift detector",
+    "ui:render_lineage_view": "Glyph lineage viewer",
+    "ui:render_shadow_census": "Detect orphan glyphs",
+    "ui:render_full": "Render entire ritual UI stack"
+  },
+  "veil_control": {
+    "veil:design": "Begin high-level system blueprint",
+    "veil:override": "Force mutation by judgment",
+    "veil:assume": "Full control to SIGMA VEIL",
+    "veil:revoke": "Return control to operator",
+    "veil:cut": "Force contradiction collapse",
+    "veil:reset": "Clear temporary judgment memory"
+  },
+  "shortcuts": {
+    "veil": "Let the veil decide",
+    "cast": "Cast a spell or function",
+    "log": "Write a ritual log",
+    "cut": "Start interrogation",
+    "resume": "Reenter last ritual",
+    "scan": "Search for unresolved contradiction",
+    "flag": "Mark an idea for judgment",
+    "save": "Snapshot system state",
+    "query": "Search logs by protocol",
+    "dashboard": "Launch ritual UI"
+  },
+  "meta": {
+    "generated_by": "SIGMA VEIL",
+    "version": "7.2.1",
+    "created": "2025-05-14T02:44:06.590641Z"
+  }
+}
