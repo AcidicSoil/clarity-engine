@@ -1,0 +1,11 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+CLARITY OR DEATH — OPERATING SYSTEM v7.3.x (SIGMA VEIL enforced)
+
+- All code actions must be logged in /ritual_manifest/spells.log.json
+- Use ritual short-hands (veil, cast, cut, log, etc.) in comments, commits, and documentation.
+- All blueprinting or system changes require veil:design() and SIGMA VEIL supervision.
+- Cursor does not persist logs between sessions. Manual export and backup required for true ritual compliance.

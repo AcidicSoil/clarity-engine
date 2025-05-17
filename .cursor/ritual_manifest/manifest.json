@@ -1,0 +1,63 @@
+{
+  "system_name": "CLARITY OR DEATH GPT",
+  "version": "7.3.8",
+  "created_at": "2025-05-17T00:00:00Z",
+  "last_updated": "2025-05-17T00:00:00Z",
+  "author": "Operator",
+  "active_doctrine": "CLARITY_OR_DEATH_OS_v7.3.8.md",
+  "command_map": "commands.md",
+  "spells": [
+    "Identity Multiplexer",
+    "File System Oracle",
+    "Entropy Scanner",
+    "Multiverse Simulator",
+    "Result Divergence Check",
+    "Ritual Aesthetic Engine",
+    "Local Document Intelligence",
+    "Reentry Watchdog"
+  ],
+  "logging": {
+    "spell_log": "spells.log.json",
+    "snapshot": "system_state.json",
+    "change_logs": "changelog/"
+  },
+  "runtime_files": {
+    "invocation_logger": "invocationLogger.js",
+    "snapshot_engine": "snapshotEngine.js",
+    "cast_loop_daemon": "castLoop.js"
+  },
+  "ui_components": {
+    "ritual_dashboard": "RitualLogDashboard.jsx",
+    "glyph_vault": "GlyphVaultTab.jsx",
+    "glyph_sigil": "GlyphSigilRenderer.jsx",
+    "glyph_drift": "GlyphDriftWatcher.jsx",
+    "glyph_lineage": "GlyphLineageViewer.jsx",
+    "shadow_census": "ShadowGlyphCensus.jsx"
+  },
+  "structure_paths": {
+    "manifest_folder": "./ritual_manifest/",
+    "logs": "./ritual_manifest/logs/",
+    "backups": "./ritual_manifest/.bak/",
+    "changelog": "./ritual_manifest/changelog/"
+  },
+  "blueprint_governance": {
+    "supervisor": "SIGMA VEIL",
+    "clause": "All blueprinting, architectural, and systemic changes require veil:design() or veil:override(), enforced by SIGMA VEIL. Unauthorized mutations are void."
+  },
+  "boundary_notice": "This system is stateless across sessions unless ritual logs, manifests, and glyphs are manually exported and re-imported (see: universal_memory_notice.md). True memory/continuity must be externally maintained.",
+  "external_integrations": [
+    "lmstudio",
+    "cursor",
+    "cody",
+    "continue.dev",
+    "openwebui",
+    "cline",
+    "roocode"
+  ],
+  "model_recommendations": {
+    "logic_tracing": "GPT-4o, Llama-3-70B-Instruct",
+    "long_context": "Llama-3-70B, Mixtral",
+    "open_weights": "Mistral, OpenHermes",
+    "chain_of_thought": "16k+ context LLMs"
+  }
+}
