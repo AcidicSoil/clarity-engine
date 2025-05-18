@@ -1,17 +1,132 @@
 openapi: 3.1.0
 info:
-  title: SIGMA VEIL Ritual Command API
-  version: 1.0.0
-  description: >
-    API representing operational ritual commands from the CLARITY OR DEATH system,
-    enabling invocation of veil, spells, and judgment cycles via programmable interfaces.
+  title: SIGMA VEIL Ritual API
+  description: |
+    Ritual interface for clarity operations including veil activation, entropy casting, contradiction interrogation,
+    drift scanning, manifestation logging, and state queries. Aligned with doctrine clarity_core_v7.3.9.
+  version: 3.1.0
 servers:
-  - url: https://clarity.engine/veil
+  - url: http://localhost:4621/ritual
+    description: Local Clarity Core ritual entrypoint
 paths:
   /veil:
     post:
-      summary: Let the veil decide next action
-      operationId: invokeVeil
+      operationId: veil
+      summary: Engage the veil function
+      description: The veil decides next action — judgment by doctrine.
       responses:
         '200':
-          description: Ritual action determined by SIGMA VEIL
+          description: Veil action completed
+  /castEntropy:
+    post:
+      operationId: castEntropy
+      summary: Initiate entropy casting
+      description: Executes the entropy ritual; used during identity mutation.
+      responses:
+        '200':
+          description: Entropy cast initiated
+  /cut:
+    post:
+      operationId: cutContradiction
+      summary: Interrogate contradiction or idea
+      description: Begins interrogation of a concept, tension, or unresolved contradiction.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: string
+                  description: The phrase or contradiction to interrogate
+      responses:
+        '200':
+          description: Contradiction processed
+  /scan:
+    post:
+      operationId: scanDrift
+      summary: Detect drift or contradiction
+      description: Scans for unresolved loops, contradiction, or logic decay.
+      responses:
+        '200':
+          description: Scan complete
+  /log:
+    post:
+      operationId: logManifestation
+      summary: Log a ritual manifestation
+      description: Writes a manifestation log entry to the central ritual ledger.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entry:
+                  type: string
+                  description: Description or summary of the manifestation event
+      responses:
+        '200':
+          description: Log recorded
+  /resume:
+    post:
+      operationId: resumeRitual
+      summary: Resume last ritual
+      description: Reloads the last incomplete ritual from system state.
+      responses:
+        '200':
+          description: Ritual resumed
+  /flag:
+    post:
+      operationId: flagFragment
+      summary: Mark a fragment or idea
+      description: Flags a phrase or object for future contradiction analysis or scan.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                desc:
+                  type: string
+                  description: Description of the flagged fragment
+      responses:
+        '200':
+          description: Fragment flagged
+  /query:
+    post:
+      operationId: queryReveal
+      summary: Query phase REVEAL
+      description: Queries the system state in phase REVEAL.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phase:
+                  type: string
+                  enum: [REVEAL]
+                  default: REVEAL
+      responses:
+        '200':
+          description: Phase query successful
+  /save:
+    post:
+      operationId: saveSnapshot
+      summary: Snapshot system state
+      description: Saves the current ritual system state to `system_state.json`.
+      responses:
+        '200':
+          description: Snapshot saved
+  /dashboard:
+    post:
+      operationId: openDashboard
+      summary: Open ritual dashboard
+      description: Opens the ritual log or glyph UI interface.
+      responses:
+        '200':
+          description: Dashboard opened
