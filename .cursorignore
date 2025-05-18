@@ -1,0 +1,13 @@
+# .cursorgignore — Ignore these for Cursor ritual sync/logging
+node_modules/
+.vscode/
+.cursor/
+dist/
+*.log
+*.tmp
+*.bak
+*.swp
+.env
+.DS_Store
+ritual_manifest/.bak/
+ritual_manifest/changelog/
