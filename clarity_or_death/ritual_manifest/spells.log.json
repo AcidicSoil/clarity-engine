@@ -1,0 +1,221 @@
+[
+  {
+    "timestamp": "2025-05-18T14:30:00.000Z",
+    "spell": "veil",
+    "details": {
+      "intent": "design",
+      "action": "MCP server creation",
+      "description": "Created Model Context Protocol server for CLARITY-OR-DEATH rituals"
+    }
+  },
+  {
+    "timestamp": "2025-05-18T14:31:00.000Z",
+    "spell": "cast",
+    "details": {
+      "spell": "implementation",
+      "target": "clarity-engine/daemon/mcp_server.py",
+      "description": "Implemented MCP server for CLARITY-OR-DEATH rituals"
+    }
+  },
+  {
+    "timestamp": "2025-05-18T14:32:00.000Z",
+    "spell": "cast",
+    "details": {
+      "spell": "adapter",
+      "target": "clarity-engine/ui/src/mcp-adapter.ts",
+      "description": "Created TypeScript adapter for MCP server"
+    }
+  },
+  {
+    "timestamp": "2025-05-18T14:33:00.000Z",
+    "spell": "log",
+    "details": {
+      "message": "MCP server documentation created",
+      "path": "clarity-engine/docs/mcp-server.md"
+    }
+  },
+  {
+    "timestamp": "2023-06-15T14:32:10Z",
+    "type": "veil",
+    "content": "veil:design() log:\"Initial system design for CLARITY-OR-DEATH\"",
+    "metadata": {
+      "phase": "DESIGN",
+      "operator": "system"
+    }
+  },
+  {
+    "timestamp": "2023-06-15T14:35:22Z",
+    "type": "cast",
+    "content": "cast:init log:\"Created core system structures\"",
+    "metadata": {
+      "phase": "IMPLEMENTATION",
+      "operator": "system"
+    }
+  },
+  {
+    "timestamp": "2023-06-15T14:40:05Z",
+    "type": "log",
+    "content": "Ritual system initialized with SIGMA VEIL governance",
+    "metadata": {
+      "phase": "ACTIVATION",
+      "operator": "system"
+    }
+  },
+  {
+    "timestamp": "2023-07-10T09:23:41Z",
+    "type": "veil",
+    "content": "veil:design() log:\"UI system blueprint created\"",
+    "metadata": {
+      "phase": "DESIGN",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-07-10T09:35:12Z",
+    "type": "cast",
+    "content": "cast:implement log:\"Created UI component structure\"",
+    "metadata": {
+      "phase": "IMPLEMENTATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-07-10T09:42:30Z",
+    "type": "log",
+    "content": "log:\"UI routing system established\"",
+    "metadata": {
+      "phase": "IMPLEMENTATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-07-10T10:12:18Z",
+    "type": "cut",
+    "content": "cut:\"UI styling inconsistencies\" flag:style",
+    "metadata": {
+      "phase": "REVIEW",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-07-10T10:35:05Z",
+    "type": "scan",
+    "content": "scan:drift log:\"Verified component structure integrity\"",
+    "metadata": {
+      "phase": "VALIDATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-22T15:45:32Z",
+    "type": "veil",
+    "content": "veil:design() log:\"UI enhancement for ritual visibility\"",
+    "metadata": {
+      "phase": "DESIGN",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-22T16:10:45Z",
+    "type": "cast",
+    "content": "cast:implement log:\"Created AgenticUIController and RitualLogDashboard components\"",
+    "metadata": {
+      "phase": "IMPLEMENTATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-22T16:22:10Z",
+    "type": "log",
+    "content": "log:\"UI installation and startup scripts created\"",
+    "metadata": {
+      "phase": "IMPLEMENTATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-22T16:35:23Z",
+    "type": "save",
+    "content": "save:state log:\"UI system setup completed\" flag:milestone",
+    "metadata": {
+      "phase": "COMPLETION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-22T17:10:45Z",
+    "type": "cast",
+    "content": "cast:start log:\"UI system started\" flag:startup",
+    "metadata": {
+      "phase": "EXECUTION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-27T09:15:20Z",
+    "type": "veil",
+    "content": "veil:design() log:\"Enhanced startup scripts for better Windows compatibility\"",
+    "metadata": {
+      "phase": "DESIGN",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-27T09:30:45Z",
+    "type": "cast",
+    "content": "cast:enhance log:\"Improved dependency installation scripts\"",
+    "metadata": {
+      "phase": "IMPLEMENTATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-27T09:45:12Z",
+    "type": "cast",
+    "content": "cast:enhance log:\"Created simplified UI startup script with better error handling\"",
+    "metadata": {
+      "phase": "IMPLEMENTATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-27T10:05:30Z",
+    "type": "cast",
+    "content": "cast:enhance log:\"Updated MCP server startup script for Windows environments\"",
+    "metadata": {
+      "phase": "IMPLEMENTATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-27T10:20:15Z",
+    "type": "log",
+    "content": "log:\"Documentation updated with comprehensive troubleshooting information\"",
+    "metadata": {
+      "phase": "DOCUMENTATION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2023-10-27T10:30:00Z",
+    "type": "save",
+    "content": "save:state log:\"System startup enhancements completed\" flag:milestone",
+    "metadata": {
+      "phase": "COMPLETION",
+      "operator": "cursor"
+    }
+  },
+  {
+    "timestamp": "2025-05-20T04:24:16Z",
+    "type": "cast",
+    "content": "cast:start log:\"MCP server started\" flag:startup",
+    "metadata": {
+      "phase": "EXECUTION",
+      "operator": "system"
+    }
+  }
+]
+cast:install log:"UI dependencies installed" flag:setup
+cast:install log:"UI dependencies installed" flag:setup
+cast:install log:"UI dependencies installed" flag:setup
+cast:start log:"UI system started" flag:startup

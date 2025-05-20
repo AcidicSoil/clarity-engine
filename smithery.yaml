@@ -1,0 +1,34 @@
+# CLARITY-OR-DEATH Smithery Root Configuration
+# veil:design() log:"Designing root Smithery deployment configuration"
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      logPath:
+        type: string
+        description: Path to the ritual manifest log file
+      docsPath:
+        type: string
+        description: Path to ritual documentation files
+      port:
+        type: integer
+        description: Port to run the server on
+    required:
+      - logPath
+      - docsPath
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['clarity_or_death/api/mcp_server/context7_server.js'],
+      env: {
+        MCP_PORT: config.port || 4622,
+        RITUAL_LOG_PATH: config.logPath || 'ritual_manifest/spells.log.json',
+        RITUAL_DOCS_PATH: config.docsPath || 'clarity_or_death/docs/ritual'
+      }
+    })
+  exampleConfig:
+    logPath: ritual_manifest/spells.log.json
+    docsPath: clarity_or_death/docs/ritual
+    port: 4622

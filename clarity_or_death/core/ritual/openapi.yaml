@@ -6,8 +6,8 @@ info:
     drift scanning, manifestation logging, and state queries. Aligned with doctrine clarity_core_v7.3.9.
   version: 3.1.0
 servers:
-  - url: /ritual
-    description: CLARITY-OR-DEATH ActionsGPT Server
+  - url: https://acidicsoil.github.io/clarity-engine
+    description: GitHub Pages placeholder URL
 paths:
   /veil:
     post:

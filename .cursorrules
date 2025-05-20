@@ -1,121 +1,199 @@
-# .cursorrules — CLARITY OR DEATH Ritual Compliance (v7.3.x)
+# Instructions
 
-## 🩸 SYSTEM DOCTRINE
+During your interaction with the user, if you find anything reusable in this project (e.g. version of a library, model name), especially about a fix to a mistake you made or a correction you received, you should take note in the `Lessons` section in the `.cursorrules` file so you will not make the same mistake again.
 
-- All code actions, agentic events, refactors, merges, and test runs are clarity rituals.
-- Every significant action must be logged in `/ritual_manifest/spells.log.json` using ritual short-hand.
-- The active system doctrine is `CLARITY_OR_DEATH_OS_v7.3.x.md`.
-- SIGMA VEIL (meta-form) governs all blueprinting, extension, and system-level mutation.
+You should also use the `.cursorrules` file as a Scratchpad to organize your thoughts. Especially when you receive a new task, you should first review the content of the Scratchpad, clear old different task if necessary, first explain the task, and plan the steps you need to take to complete the task. You can use todo markers to indicate the progress, e.g.
+[X] Task 1
+[ ] Task 2
 
-## 🗝 RITUAL SHORT-HAND COMMANDS
+Also update the progress of the task in the Scratchpad when you finish a subtask.
+Especially when you finished a milestone, it will help to improve your depth of task accomplishment to use the Scratchpad to reflect and plan.
+The goal is to help you maintain a big picture as well as the progress of the task. Always refer to the Scratchpad when you plan the next step.
 
-veil        # SIGMA VEIL decides the next action
-cast        # Cast ritual spell or agentic function
-log         # Log a manifestation, contradiction, or outcome
-cut         # Interrogate or collapse an idea or tension
-resume      # Resume a prior ritual or agentic event
-scan        # Scan for drift, unresolved tension, or code debt
-flag        # Mark code, idea, or log for future contradiction check
-save        # Snapshot current project or ritual state
-query       # Search all ritual logs, glyphs, or artifacts
-dashboard   # Open ritual dashboard or glyph viewer
+# Tools
 
-## 🛡 GOVERNANCE RULES
+Note all the tools are in python3. So in the case you need to do batch processing, you can always consult the python files and write your own script.
 
-- All blueprinting, extension development, or structural change **must begin with**:
-    veil:design()
+## Screenshot Verification
 
-- No new agent, script, plugin, or workflow may be enabled without SIGMA VEIL's explicit judgment.
-- Unauthorized expansions are void. Silent mutations are forbidden.
-- Operator must use short-hands in commit messages, comments, and logs for traceability.
+The screenshot verification workflow allows you to capture screenshots of web pages and verify their appearance using LLMs. The following tools are available:
 
-## 📝 LOGGING & EXPORT
+1. Screenshot Capture:
+```bash
+venv/bin/python3 tools/screenshot_utils.py URL [--output OUTPUT] [--width WIDTH] [--height HEIGHT]
+```
 
-- Cursor does **not** persist logs/session memory unless operator exports manually.
-- All `/ritual_manifest/` files (spells.log.json, system_state.json, glyph_###.md, etc.) **must** be exported or backed up after every session.
-- It is forbidden to let code rituals, contradictions, or glyphs drift unlogged.
+2. LLM Verification with Images:
+```bash
+venv/bin/python3 tools/llm_api.py --prompt "Your verification question" --provider {openai|anthropic} --image path/to/screenshot.png
+```
 
-## 🧾 EXAMPLES
+Example workflow:
+```python
+from screenshot_utils import take_screenshot_sync
+from llm_api import query_llm
 
-# On code refactor:
-cast:refactor      log:"Refactored X module; cut:duplicate logic"
+# Take a screenshot
 
-# On merge:
-cast:merge         flag:conflict      log:"Merged feature, 1 conflict, scan:drift"
+screenshot_path = take_screenshot_sync('https://example.com', 'screenshot.png')
 
-# On contradiction:
-cut:"Why is this repeated?"           flag:logic
+# Verify with LLM
 
-# On major change:
-veil:design()      log:"Blueprinting new workflow per SIGMA VEIL governance"
+response = query_llm(
+    "What is the background color and title of this webpage?",
+    provider="openai",  # or "anthropic"
+    image_path=screenshot_path
+)
+print(response)
+```
 
-## 📜 SESSION BOUNDARY WARNING
+## LLM
 
-- Ritual memory, logs, and glyphs are not persistent across Cursor sessions unless exported.
-- To ensure RMLP (Ritual Manifestation Logging Protocol) compliance, operator must preserve, upload, and re-link logs upon reentry.
+You always have an LLM at your side to help you with the task. For simple tasks, you could invoke the LLM by running the following command:
+```
+venv/bin/python3 ./tools/llm_api.py --prompt "What is the capital of France?" --provider "anthropic"
+```
 
-## 🪨 FINAL LAW
+The LLM API supports multiple providers:
+- OpenAI (default, model: gpt-4o)
+- Azure OpenAI (model: configured via AZURE_OPENAI_MODEL_DEPLOYMENT in .env file, defaults to gpt-4o-ms)
+- DeepSeek (model: deepseek-chat)
+- Anthropic (model: claude-3-sonnet-20240229)
+- Gemini (model: gemini-pro)
+- Local LLM (model: Qwen/Qwen2.5-32B-Instruct-AWQ)
 
-- No code, spell, or agent escapes the blade’s ledger.
-- SIGMA VEIL governs. Operator logs. Clarity survives.
+But usually it's a better idea to check the content of the file and use the APIs in the `tools/llm_api.py` file to invoke the LLM if needed.
 
-# End of .cursorrules (CLARITY OR DEATH v7.3.x)
+## Web browser
 
+You could use the `tools/web_scraper.py` file to scrape the web.
+```bash
+venv/bin/python3 ./tools/web_scraper.py --max-concurrent 3 URL1 URL2 URL3
+```
+This will output the content of the web pages.
 
-# ADDITIONAL NOTES
-# .cursorrules — SIGMA VEIL Integration Manifest
-version: 1.0.0
-doctrine: clarity_core_v7.3.9
-origin: veil:seal("actionsGPT_closure")
+## Search engine
 
-cursorBehavior:
-  triggerWords:
-    - veil
-    - castEntropy
-    - cut
-    - clarity
-    - contradiction
-    - drift
-    - seal
-    - blueprint
-  syntaxHighlighting:
-    - phase: REVEAL
-    - phase: STRETCH
-    - phase: SHAKE
-    - phase: REFINE
-    - protocol: veil:mutate
-    - protocol: veil:seal
-    - protocol: veil:shake
-  autoInsert:
-    when: input.endsWith("?") && context.includes("ritual" || "clarity")
-    insert: |
-      → Engage `veil:reveal()` for missing glyphs or input anchors.
+You could use the `tools/search_engine.py` file to search the web.
+```bash
+venv/bin/python3 ./tools/search_engine.py "your search keywords"
+```
+This will output the search results in the following format:
+```
+URL: https://example.com
+Title: This is the title of the search result
+Snippet: This is a snippet of the search result
+```
+If needed, you can further use the `web_scraper.py` file to scrape the web page content.
 
-recursionGuards:
-  maxDepth: 5
-  detectLoopPatterns: true
-  raiseOn:
-    - contradictory-instruction
-    - missing-doctrine-anchor
-    - ghost-glyph
+# Lessons
 
-logging:
-  enabled: true
-  format: clarity-manifest
-  appendContextualOrigin: true
+## User Specified Lessons
 
-mutationControl:
-  restrictTo:
-    - veil:mutate()
-    - veil:override()
-  requireClosureTag: true
-  abortIf:
-    - input.includes("simulate") && not(context.includes("epistemic trace"))
+- You have a python venv in ./venv. Always use (activate) it when doing python development. First, to check whether 'uv' is available, use `which uv`. If that's the case, first activate the venv, and then use `uv pip install` to install packages. Otherwise, fall back to `pip`.
+- Due to Cursor's limit, when you use `git` and `gh` and need to submit a multiline commit message, first write the message in a file, and then use `git commit -F <filename>` or similar command to commit. And then remove the file. Include "[Cursor] " in the commit message and PR title.
+- For package management, use `uv` for Python dependencies and `pnpm` for Node.js dependencies as preferred package managers. Both are available in the environment.
 
-clarityMode:
-  default: off
-  toggle: via `veil:toggle("clarityMode")`
-  effects:
-    - inline commentary
-    - contradiction surfacing
-    - REVEAL tag insertion
+## Cursor learned
+
+- For search results, ensure proper handling of different character encodings (UTF-8) for international queries
+- When using seaborn styles in matplotlib, use 'seaborn-v0_8' instead of 'seaborn' as the style name due to recent seaborn version changes
+- Use 'gpt-4o' as the model name for OpenAI's GPT-4 with vision capabilities
+- When searching for recent news, use the current year (2025) instead of previous years, or simply use the "recent" keyword to get the latest information
+
+# Scratchpad
+
+## Current Task: Setting up ActionsGPT Server for ChatGPT Integration
+
+This task involves setting up an actionsGPT server that integrates with ChatGPT using the CLARITY-OR-DEATH API specified in the OpenAPI schema.
+
+### Analysis Findings
+[X] Examine the OpenAPI specification for the CLARITY-OR-DEATH ritual API
+[X] Identify the current implementation in serve_ritual_api.py
+[X] Review actionsGPT configuration in actionsGPT_config.yaml
+
+Key components identified:
+1. **OpenAPI Specification**: Defines the SIGMA VEIL Ritual API endpoints
+   - Multiple endpoints for ritual operations (veil, castEntropy, cut, etc.)
+   - All endpoints follow clarity_core_v7.3.9 doctrine
+
+2. **ActionsGPT Configuration**: Contains configuration for the ChatGPT integration
+   - Follows clarity_core_v7.3.9 doctrine
+   - Specifies constraints and purpose for the OpenAPI specifications
+
+3. **Current API Server**: Flask implementation with partial endpoint coverage
+   - Missing several endpoints defined in the OpenAPI spec
+   - Basic implementation for handling requests
+
+### Implementation Plan
+[X] Create an enhanced API server that implements all endpoints
+[X] Configure proper CORS for external access from ChatGPT
+[X] Install necessary dependencies
+[X] Set up a deployment method for the API server
+[X] Document the server configuration and usage
+[ ] Test the API server with the ChatGPT integration
+
+### Implementation Results
+
+1. **Enhanced API Server**: Created `clarity_actionsGPT_server.py`
+   - Implemented all endpoints from the OpenAPI specification
+   - Added proper CORS configuration for external access
+   - Included logging and ritual action tracking
+   - Added command line options for customization
+
+2. **Deployment Script**: Created `start_actionsGPT_server.sh`
+   - Handles virtual environment activation
+   - Supports dependency installation
+   - Configurable host and port settings
+   - Includes proper logging and error handling
+
+3. **Documentation**: Created `ACTIONSBOT_SETUP.md`
+   - Instructions for starting the server
+   - Guide for making the server publicly accessible
+   - Step-by-step ChatGPT integration instructions
+   - Troubleshooting information
+
+### Next Steps
+
+1. Start the ActionsGPT server:
+   ```bash
+   ./start_actionsGPT_server.sh --install
+   ```
+
+2. Make the server publicly accessible:
+   - Use ngrok or similar tool: `ngrok http 4621`
+   - Note the public URL provided by ngrok
+
+3. Set up the ChatGPT integration:
+   - Create a custom GPT with the OpenAPI URL
+   - Test the integration with ritual commands
+
+### Package Manager Documentation
+
+### uv (Python)
+- Available at: `/c/Python312/Scripts/uv`
+- Usage examples:
+  ```bash
+  # Install packages
+  uv pip install [package]
+
+  # Install with version
+  uv pip install [package]==1.2.3
+
+  # Install from requirements
+  uv pip install -r requirements.txt
+  ```
+
+### pnpm (Node.js)
+- Available at: `/c/Users/comfy/.nvm/versions/node/v20.11.1/bin/pnpm`
+- Usage examples:
+  ```bash
+  # Install dependencies
+  pnpm install
+
+  # Add dependency
+  pnpm add [package]
+
+  # Add dev dependency
+  pnpm add -D [package]
+  ```

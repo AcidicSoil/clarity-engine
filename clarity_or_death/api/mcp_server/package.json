@@ -1,0 +1,33 @@
+{
+  "name": "clarity-or-death-context7-mcp-server",
+  "version": "7.3.9",
+  "description": "CLARITY-OR-DEATH Context7 MCP Server for ritual knowledge integration",
+  "main": "context7_server.js",
+  "scripts": {
+    "start": "node context7_server.js",
+    "deploy": "npx @smithery/cli deploy context7_server.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "http": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@smithery/cli": "^1.1.0",
+    "@smithery/sdk": "^1.1.0",
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "keywords": [
+    "clarity",
+    "ritual",
+    "mcp",
+    "veil",
+    "context7",
+    "smithery"
+  ],
+  "author": "CLARITY-OR-DEATH",
+  "license": "UNLICENSED"
+}
