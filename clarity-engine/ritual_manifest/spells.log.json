@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "timestamp": "2025-05-20T03:17:38.382288",
+    "spell": "system",
+    "details": {
+      "event": "mcp_server_start",
+      "port": 4621
+    }
+  }
+]
